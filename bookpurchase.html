@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #main{
+            width:300px;
+            display:flex;
+            justify-content: space-around;
+        }
+        #purchase{
+            border:2px solid black;
+            width:300px;
+        }
+        body{
+            background-color:lightpink;
+        }
+        .d1{
+            margin:150px 0px 0px 0px;
+            border:2px solid black;
+            width:400px;
+            padding:30px;
+            background-color: azure;
+        }
+        .d2{
+            border:2px solid black;
+            padding:30px;
+            background-color: azure;
+            width:400px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Library</h1>
+    <div class="d2">
+    
+    <div  id="main">
+    
+    <div id='b1'class="books " style="background-color:lightgreen" >Book1</div>
+    <div id='b2' class="books " style="background-color:pink">Book2</div>
+    <div  id='b3'class="books " style="background-color:burlywood">Book3</div>   
+    <div id='b4' class="books " style="background-color:aqua">Book4</div> 
+    </div></div>
+     <div class="d1"> 
+    <h1>Purchased</h1>
+    <p id="purchase"></p>
+     </div>
+</body>
+<script>
+   // let mainbutton=document.getElementById('main');
+    //console.log(mainbutton)
+    let book=document.querySelectorAll('.books')
+    let purchased=[];
+    book.forEach(abook=>(
+    abook.addEventListener("click",()=>{
+        booknumbers=abook.innerHTML
+        //console.log(booknumbers) 
+       if(!purchased.includes(booknumbers)){
+        purchased.push(booknumbers)
+        abook.innerHTML=''
+        
+
+       }
+    document.getElementById('purchase').innerHTML=purchased
+      })
+    ))
+</script>
+</html>
